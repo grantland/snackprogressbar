@@ -62,7 +62,7 @@ internal class SnackProgressBarCore private constructor(
             // Get inflater from parent
             val inflater = LayoutInflater.from(parentView.context)
             // Add overlayLayout as background
-            val overlayLayout = inflater.inflate(R.layout.overlay, parentView, false) as FrameLayout
+            val overlayLayout = inflater.inflate(R.layout.snackprogressbar_overlay, parentView, false) as FrameLayout
             // Starting v6.0, assign unique view id to overlayLayout.
             // There has been cases where overlayLayout is not correctly removed when the first (with overLay)
             // and second (without overLay) snackProgressBar are updated too quickly. This maybe due to removing the
