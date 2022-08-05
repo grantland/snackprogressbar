@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'org.jetbrains.dokka'
 
 android {
     compileSdkVersion 29
@@ -21,15 +20,15 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.google.android.material:material:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
 
-dokka {
-    outputFormat = 'gfm'
-    outputDirectory = 'D:/AndroidStudioProjects/snackprogressbar/docs'
+pluginManager.withPlugin('org.jetbrains.dokka') {
+    dokka {
+        outputFormat = 'gfm'
+        outputDirectory = 'D:/AndroidStudioProjects/snackprogressbar/docs'
+    }
 }
