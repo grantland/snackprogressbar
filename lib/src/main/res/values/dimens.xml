@@ -11,6 +11,6 @@
     <dimen name="snackProgressBar_size_icon">32dp</dimen>
 
     <!-- text -->
-    <dimen name="text_body">14sp</dimen>
-    <dimen name="text_body_dp">14dp</dimen>
+    <dimen name="snackProgressBar_text_body">14sp</dimen>
+    <dimen name="snackProgressBar_text_body_dp">14dp</dimen>
 </resources>

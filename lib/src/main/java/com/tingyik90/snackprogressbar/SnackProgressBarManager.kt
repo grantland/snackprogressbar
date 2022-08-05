@@ -4,8 +4,11 @@ import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import androidx.annotation.*
+import androidx.annotation.ColorRes
+import androidx.annotation.FloatRange
+import androidx.annotation.IntDef
 import androidx.annotation.IntRange
+import androidx.annotation.Keep
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -13,7 +16,6 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import java.lang.ref.WeakReference
-import java.util.*
 
 /**
  * Manager class handling all the SnackProgressBars added.
@@ -88,13 +90,13 @@ class SnackProgressBarManager(providedView: View, lifecycleOwner: LifecycleOwner
          * Default SnackProgressBar background color as per Material Design.
          */
         @JvmField
-        val BACKGROUND_COLOR_DEFAULT = R.color.background
+        val BACKGROUND_COLOR_DEFAULT = R.color.snackProgressBar_background
 
         /**
          * Default message text color as per Material Design.
          */
         @JvmField
-        val MESSAGE_COLOR_DEFAULT = R.color.textWhitePrimary
+        val MESSAGE_COLOR_DEFAULT = R.color.snackProgressBar_textWhitePrimary
 
         /**
          * Default action text color as per Material Design i.e. R.color.colorAccent.
@@ -112,7 +114,7 @@ class SnackProgressBarManager(providedView: View, lifecycleOwner: LifecycleOwner
          * Default progressText color as per Material Design.
          */
         @JvmField
-        val PROGRESSTEXT_COLOR_DEFAULT = R.color.textWhitePrimary
+        val PROGRESSTEXT_COLOR_DEFAULT = R.color.snackProgressBar_textWhitePrimary
 
         /**
          * Default overlayLayout color i.e. android.R.color.white.
@@ -143,7 +145,7 @@ class SnackProgressBarManager(providedView: View, lifecycleOwner: LifecycleOwner
     private var progressBarColor = PROGRESSBAR_COLOR_DEFAULT
     private var progressTextColor = PROGRESSTEXT_COLOR_DEFAULT
     private var overlayColor = OVERLAY_COLOR_DEFAULT
-    private var textSize = parentView.get()?.resources?.getDimension(R.dimen.text_body) ?: 0f
+    private var textSize = parentView.get()?.resources?.getDimension(R.dimen.snackProgressBar_text_body) ?: 0f
     private var maxLines = 2
     private var overlayLayoutAlpha = 0.8f
     private var onDisplayListener: OnDisplayListener? = null

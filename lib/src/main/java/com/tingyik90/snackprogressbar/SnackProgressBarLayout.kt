@@ -10,14 +10,29 @@ import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.VelocityTracker
 import android.view.View
-import android.widget.*
+import android.widget.FrameLayout
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.Keep
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.google.android.material.snackbar.ContentViewCallback
-import kotlinx.android.synthetic.main.snackprogressbar.view.*
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_img_icon
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_layout_background
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_layout_main
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_layout_roundedBackground
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_progressbar_circular_determinate
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_progressbar_circular_indeterminate
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_progressbar_horizontal
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_action
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_actionNextLine
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_message
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_progress
+import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_progress_circular
 import java.lang.ref.WeakReference
 import kotlin.math.abs
 
@@ -81,7 +96,7 @@ class SnackProgressBarLayout : LinearLayout, ContentViewCallback {
     private val heightActionNextLine = resources.getDimension(R.dimen.snackProgressBar_height_actionNextLine).toInt()
 
     // Use fixed dp for comparison purpose
-    private val defaultTextSizeDp = resources.getDimension(R.dimen.text_body_dp).toInt()
+    private val defaultTextSizeDp = resources.getDimension(R.dimen.snackProgressBar_text_body_dp).toInt()
     private var swipeToDismiss: Boolean = false
     private var viewsToMove: Array<WeakReference<View>>? = null
     private var onBarTouchListener: OnBarTouchListener? = null
@@ -125,7 +140,7 @@ class SnackProgressBarLayout : LinearLayout, ContentViewCallback {
      */
     fun useRoundedCornerBackground(useRoundedCornerBackground: Boolean) {
         if (useRoundedCornerBackground) {
-            roundedBackgroundLayout.background = ContextCompat.getDrawable(context, R.drawable.background_rounded)
+            roundedBackgroundLayout.background = ContextCompat.getDrawable(context, R.drawable.snackprogressbar_background_rounded)
             val layoutParams = roundedBackgroundLayout.layoutParams as MarginLayoutParams
             val margin =
                 TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8f, resources.displayMetrics).toInt()
