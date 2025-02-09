@@ -21,18 +21,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.google.android.material.snackbar.ContentViewCallback
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_img_icon
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_layout_background
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_layout_main
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_layout_roundedBackground
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_progressbar_circular_determinate
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_progressbar_circular_indeterminate
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_progressbar_horizontal
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_action
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_actionNextLine
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_message
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_progress
-import kotlinx.android.synthetic.main.snackprogressbar.view.snackProgressBar_txt_progress_circular
 import java.lang.ref.WeakReference
 import kotlin.math.abs
 
@@ -71,18 +59,18 @@ class SnackProgressBarLayout : LinearLayout, ContentViewCallback {
     }
 
     /* views */
-    val backgroundLayout: SnackProgressBarLayout by lazy { snackProgressBar_layout_background }
-    val roundedBackgroundLayout: LinearLayout by lazy { snackProgressBar_layout_roundedBackground }
-    val mainLayout: LinearLayout by lazy { snackProgressBar_layout_main }
-    val iconImage: ImageView by lazy { snackProgressBar_img_icon }
-    val messageText: TextView by lazy { snackProgressBar_txt_message }
-    val actionText: TextView by lazy { snackProgressBar_txt_action }
-    val actionNextLineText: TextView by lazy { snackProgressBar_txt_actionNextLine }
-    val progressText: TextView by lazy { snackProgressBar_txt_progress }
-    val progressTextCircular: TextView by lazy { snackProgressBar_txt_progress_circular }
-    val horizontalProgressBar: ProgressBar by lazy { snackProgressBar_progressbar_horizontal }
-    val circularDeterminateProgressBar: ProgressBar by lazy { snackProgressBar_progressbar_circular_determinate }
-    val circularIndeterminateProgressBar: ProgressBar by lazy { snackProgressBar_progressbar_circular_indeterminate }
+    val backgroundLayout: SnackProgressBarLayout by lazy { findViewById(R.id.snackProgressBar_layout_background) }
+    val roundedBackgroundLayout: LinearLayout by lazy { findViewById(R.id.snackProgressBar_layout_roundedBackground) }
+    val mainLayout: LinearLayout by lazy { findViewById(R.id.snackProgressBar_layout_main) }
+    val iconImage: ImageView by lazy { findViewById(R.id.snackProgressBar_img_icon) }
+    val messageText: TextView by lazy { findViewById(R.id.snackProgressBar_txt_message) }
+    val actionText: TextView by lazy { findViewById(R.id.snackProgressBar_txt_action) }
+    val actionNextLineText: TextView by lazy { findViewById(R.id.snackProgressBar_txt_actionNextLine) }
+    val progressText: TextView by lazy { findViewById(R.id.snackProgressBar_txt_progress) }
+    val progressTextCircular: TextView by lazy { findViewById(R.id.snackProgressBar_txt_progress_circular) }
+    val horizontalProgressBar: ProgressBar by lazy { findViewById(R.id.snackProgressBar_progressbar_horizontal) }
+    val circularDeterminateProgressBar: ProgressBar by lazy { findViewById(R.id.snackProgressBar_progressbar_circular_determinate) }
+    val circularIndeterminateProgressBar: ProgressBar by lazy { findViewById(R.id.snackProgressBar_progressbar_circular_indeterminate) }
 
     /* parameters */
     // As per Behavior in BaseTransientBottomBar
