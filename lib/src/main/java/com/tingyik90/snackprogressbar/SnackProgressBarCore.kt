@@ -15,6 +15,7 @@ import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.tingyik90.snackprogressbar.SnackProgressBar.Companion.TYPE_CIRCULAR
 import com.tingyik90.snackprogressbar.SnackProgressBar.Companion.TYPE_HORIZONTAL
 import com.tingyik90.snackprogressbar.SnackProgressBar.Companion.TYPE_NORMAL
+import java.util.Locale
 
 /**
  * Core class constructing the SnackProgressBar.
@@ -305,8 +306,8 @@ internal class SnackProgressBarCore private constructor(
         val action = snackProgressBar.getAction()
         val onActionClickListener = snackProgressBar.getOnActionClickListener()
         // Set the text
-        snackProgressBarLayout.actionText.text = action.toUpperCase()
-        snackProgressBarLayout.actionNextLineText.text = action.toUpperCase()
+        snackProgressBarLayout.actionText.text = action.uppercase(Locale.getDefault())
+        snackProgressBarLayout.actionNextLineText.text = action.uppercase(Locale.getDefault())
         // Set the onClickListener
         val onClickListener = View.OnClickListener {
             // To prevent multiple clicks on action
